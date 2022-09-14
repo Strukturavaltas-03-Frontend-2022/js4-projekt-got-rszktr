@@ -97,6 +97,7 @@ main:hover>.character__container:hover {
 
 /* Oldalsáv */
 aside {
+    position: sticky;
     display: flex;
     flex-direction: column;
     order: 1;

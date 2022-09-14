@@ -1,3 +1,8 @@
+## v1.01
+
+### Elkészült:
+- Legkeskenyebb nézetben a sidebar sticky a lap tetején. 
+
 ## v1.0
 
 ### Elkészült:
