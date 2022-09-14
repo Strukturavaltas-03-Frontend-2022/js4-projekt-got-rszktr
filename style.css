@@ -1,0 +1,288 @@
+@font-face {
+    font-family: "GameOfThrones";
+    src: url('./fonts/Game\ of\ Thrones.ttf');
+}
+
+@font-face {
+    font-family: "TrajanPro";
+    src: url('./fonts/TrajanPro-Bold.otf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+main {
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    width: 460;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: url(./assets/site/mapblue.jpg);
+    background-position: -500px -500px;
+    background-size: auto;
+    padding: 20px 20px 20px 20px;
+    transition: padding 0.5s;
+    order: 2;
+}
+
+
+/* Karakterválasztó */
+.character__container {
+    display: flex;
+    flex-direction: column;
+    width: 12.5%;
+    min-width: 120px;
+    height: 100px;
+    min-height: 150px;
+    cursor: pointer;
+}
+
+.portrait__container {
+    margin-top: 25px;
+    text-align: center;
+
+}
+
+.portrait__container img {
+    width: 75px;
+    height: 75px;
+    border: 2px solid #767165;
+    border-radius: 100rem;
+    box-sizing: border-box;
+    transition: box-shadow 0.5s, opacity 0.5s, filter 0.5s;
+}
+
+.selected {
+    box-shadow: 0 0 2px 5px rgb(189, 154, 0);
+}
+
+.name {
+    font-family: 'TrajanPro';
+    font-size: 0.75rem;
+    color: #7b6359;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 5px;
+    word-spacing: 900px;
+}
+
+main:hover>.character__container img:not(.selected) {
+    opacity: 0.5;
+    filter: saturate(0)
+}
+
+main:hover>.character__container:hover img:not(.selected) {
+    opacity: 1.0;
+    filter: saturate(1)
+}
+
+main:hover>.character__container:hover {
+    transform: scale(1.1);
+}
+
+
+/* Oldalsáv */
+aside {
+    display: flex;
+    flex-direction: column;
+    order: 1;
+    top: 0;
+    right: 0;
+    height: auto;
+    background-color: #39393a;
+    width: 100%;
+    transition: width 0.5s;
+}
+
+header {
+    font-family: 'GameOfThrones';
+    font-size: 1.4rem;
+    color: white;
+    text-align: center;
+    padding: 50px 0 0 0;
+}
+
+
+/* Részletes leírás */
+.picture__container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-top: 25px;
+    border-top: 1px solid rgb(189, 154, 0);
+}
+
+.picture__container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.id__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgb(189, 154, 0);
+}
+
+.name__detailed {
+    flex-grow: 1;
+    color: #e2e2e2;
+    font-family: 'TrajanPro';
+    font-size: 1.25rem;
+}
+
+.crest__container {
+    margin-right: 50px;
+}
+
+.description {
+    margin-top: 15px;
+    padding-right: 50px;
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    line-height: 1.4rem;
+    color: #e2e2e2;
+}
+
+.description__container {
+    flex-grow: 1;
+    padding: 0 0 0 20px;
+}
+
+
+/* Keresőmező */
+.search__container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-self: flex-end;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    padding: 20px;
+}
+
+button {
+    width: 100%;
+    background-color: #39393a;
+    color: #e2e2e2;
+    cursor: pointer;
+    border: 1px solid #e2e2e2;
+    border-radius: 0.25rem;
+    font-size: 1.5rem;
+    order: 99;
+    height: 40px;
+    transition: width 0.5s;
+}
+
+button:hover {
+    background-color: rgb(189, 154, 0);
+}
+
+.input__container {
+    display: flex;
+    position: relative;
+    flex-grow: 1;
+    width: 100%;
+    order: 1;
+    flex-grow: 1;
+    text-align: right;
+}
+
+.fa-magnifying-glass {
+    top: 12px;
+    position: absolute;
+    left: 10px;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    padding-left: 35px;
+}
+
+
+/* Reszponzivitás */
+@media only screen and (min-width: 470px) {
+    main {
+        padding: 20px 320px 20px 20px;
+        position: relative;
+    }
+
+    aside {
+        position: fixed;
+        height: 100%;
+        width: 300px;
+        padding-left: 25px;
+    }
+
+    header {
+        padding: 50px 50px 0 0;
+    }
+
+    .description__container {
+        padding: 0;
+    }
+
+    .search__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-self: flex-end;
+        width: 100%;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    input {
+        max-width: 265px;
+    }
+}
+
+
+@media only screen and (min-width: 817px) {
+    main {
+        padding: 20px 420px 20px 20px;
+    }
+
+    aside {
+        width: 400px;
+    }
+
+    .search__container {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 20px 15px 0;
+        margin-bottom: 20px;
+    }
+
+    button {
+        width: 40px;
+        height: 40px;
+        order: 1;
+    }
+
+    .input__container {
+        order: 2;
+        flex-grow: 0;
+        width: 265px;
+    }
+}
